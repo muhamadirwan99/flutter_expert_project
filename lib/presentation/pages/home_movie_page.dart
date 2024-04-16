@@ -31,7 +31,8 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
     Future.microtask(
         () => Provider.of<TvSeriesListNotifier>(context, listen: false)
           ..fetchNowPlayingTvSeries()
-          ..fetchPopularTvSeries());
+          ..fetchPopularTvSeries()
+          ..fetchTopRatedMovies());
   }
 
   @override
@@ -131,14 +132,14 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 onTap: () =>
                     Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
               ),
-              Consumer<MovieListNotifier>(builder: (context, data, child) {
-                final state = data.topRatedMoviesState;
+              Consumer<TvSeriesListNotifier>(builder: (context, data, child) {
+                final state = data.topRatedTvSeriesState;
                 if (state == RequestState.Loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
                 } else if (state == RequestState.Loaded) {
-                  return MovieList(data.topRatedMovies);
+                  return TvSeriesList(data.topRatedTvSeries);
                 } else {
                   return Text('Failed');
                 }
