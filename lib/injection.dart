@@ -21,6 +21,7 @@ import 'package:ditonton/domain/usecases/tv_series/get_popular_tv_series.dart';
 import 'package:ditonton/domain/usecases/tv_series/get_top_rated_tv_series.dart';
 import 'package:ditonton/domain/usecases/tv_series/get_tv_series_detail.dart';
 import 'package:ditonton/domain/usecases/tv_series/get_tv_series_recommendations.dart';
+import 'package:ditonton/domain/usecases/tv_series/search_tv_series.dart';
 import 'package:ditonton/presentation/provider/movie_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_search_notifier.dart';
@@ -31,6 +32,7 @@ import 'package:ditonton/presentation/provider/tv_series/popular_tv_series_notif
 import 'package:ditonton/presentation/provider/tv_series/top_rated_tv_series_notifier.dart';
 import 'package:ditonton/presentation/provider/tv_series/tv_series_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/tv_series/tv_series_list_notifier.dart';
+import 'package:ditonton/presentation/provider/tv_series/tv_series_search_notifier.dart';
 import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
@@ -93,11 +95,11 @@ void init() {
       // removeWatchlist: locator(),
     ),
   );
-  // locator.registerFactory(
-  //   () => MovieSearchNotifier(
-  //     searchMovies: locator(),
-  //   ),
-  // );
+  locator.registerFactory(
+    () => TvSeriesSearchNotifier(
+      searchTvSeries: locator(),
+    ),
+  );
   locator.registerFactory(
     () => PopularTvSeriesNotifier(
       locator(),
@@ -137,7 +139,7 @@ void init() {
   locator.registerLazySingleton(() => GetTopRatedTvSeries(locator()));
   locator.registerLazySingleton(() => GetTvSeriesDetail(locator()));
   locator.registerLazySingleton(() => GetTvSeriesRecommendations(locator()));
-  // locator.registerLazySingleton(() => SearchMovies(locator()));
+  locator.registerLazySingleton(() => SearchTvSeries(locator()));
   // locator.registerLazySingleton(() => GetWatchListStatus(locator()));
   // locator.registerLazySingleton(() => SaveWatchlist(locator()));
   // locator.registerLazySingleton(() => RemoveWatchlist(locator()));
