@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:ditonton/common/exception.dart';
+import 'package:ditonton/data/models/tv_series/tv_series_detail_model.dart';
 import 'package:ditonton/data/models/tv_series/tv_series_model.dart';
 import 'package:ditonton/data/models/tv_series/tv_series_response.dart';
 import 'package:http/http.dart' as http;
@@ -9,7 +10,7 @@ abstract class TvSeriesRemoteDataSource {
   Future<List<TvSeriesModel>> getNowPlayingTvSeries();
   Future<List<TvSeriesModel>> getPopularTvSeries();
   Future<List<TvSeriesModel>> getTopRatedTvSeries();
-  // Future<MovieDetailResponse> getMovieDetail(int id);
+  Future<TvSeriesDetailResponse> getTvSeriesDetail(int id);
   // Future<List<MovieModel>> getMovieRecommendations(int id);
   // Future<List<MovieModel>> searchMovies(String query);
 }
@@ -34,17 +35,16 @@ class TvSeriesRemoteDataSourceImpl implements TvSeriesRemoteDataSource {
     }
   }
 
-  // @override
-  // Future<MovieDetailResponse> getMovieDetail(int id) async {
-  //   final response =
-  //       await client.get(Uri.parse('$BASE_URL/movie/$id?$API_KEY'));
+  @override
+  Future<TvSeriesDetailResponse> getTvSeriesDetail(int id) async {
+    final response = await client.get(Uri.parse('$BASE_URL/tv/$id?$API_KEY'));
 
-  //   if (response.statusCode == 200) {
-  //     return MovieDetailResponse.fromJson(json.decode(response.body));
-  //   } else {
-  //     throw ServerException();
-  //   }
-  // }
+    if (response.statusCode == 200) {
+      return TvSeriesDetailResponse.fromJson(json.decode(response.body));
+    } else {
+      throw ServerException();
+    }
+  }
 
   // @override
   // Future<List<MovieModel>> getMovieRecommendations(int id) async {
