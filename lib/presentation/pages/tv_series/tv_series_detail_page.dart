@@ -26,8 +26,8 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
     Future.microtask(() {
       Provider.of<TvSeriesDetailNotifier>(context, listen: false)
           .fetchTvSeriesDetail(widget.id);
-      // Provider.of<MovieDetailNotifier>(context, listen: false)
-      //     .loadWatchlistStatus(widget.id);
+      Provider.of<TvSeriesDetailNotifier>(context, listen: false)
+          .loadWatchlistStatus(widget.id);
     });
   }
 
@@ -46,7 +46,7 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
               child: DetailContent(
                 tvSeries,
                 provider.tvSeriesRecommendations,
-                // provider.isAddedToWatchlist,
+                provider.isAddedToWatchlist,
               ),
             );
           } else {
@@ -61,12 +61,12 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
 class DetailContent extends StatelessWidget {
   final TvSeriesDetail tvSeries;
   final List<TvSeries> recommendations;
-  // final bool isAddedWatchlist;
+  final bool isAddedWatchlist;
 
   DetailContent(
     this.tvSeries,
     this.recommendations,
-    // this.isAddedWatchlist,
+    this.isAddedWatchlist,
   );
 
   @override
@@ -111,47 +111,47 @@ class DetailContent extends StatelessWidget {
                             ),
                             ElevatedButton(
                               onPressed: () async {
-                                // if (!isAddedWatchlist) {
-                                //   await Provider.of<MovieDetailNotifier>(
-                                //           context,
-                                //           listen: false)
-                                //       .addWatchlist(tvSeries);
-                                // } else {
-                                //   await Provider.of<MovieDetailNotifier>(
-                                //           context,
-                                //           listen: false)
-                                //       .removeFromWatchlist(tvSeries);
-                                // }
+                                if (!isAddedWatchlist) {
+                                  await Provider.of<TvSeriesDetailNotifier>(
+                                          context,
+                                          listen: false)
+                                      .addWatchlist(tvSeries);
+                                } else {
+                                  await Provider.of<TvSeriesDetailNotifier>(
+                                          context,
+                                          listen: false)
+                                      .removeFromWatchlist(tvSeries);
+                                }
 
-                                // final message =
-                                //     Provider.of<MovieDetailNotifier>(context,
-                                //             listen: false)
-                                //         .watchlistMessage;
+                                final message =
+                                    Provider.of<TvSeriesDetailNotifier>(context,
+                                            listen: false)
+                                        .watchlistMessage;
 
-                                // if (message ==
-                                //         MovieDetailNotifier
-                                //             .watchlistAddSuccessMessage ||
-                                //     message ==
-                                //         MovieDetailNotifier
-                                //             .watchlistRemoveSuccessMessage) {
-                                //   ScaffoldMessenger.of(context).showSnackBar(
-                                //       SnackBar(content: Text(message)));
-                                // } else {
-                                //   showDialog(
-                                //       context: context,
-                                //       builder: (context) {
-                                //         return AlertDialog(
-                                //           content: Text(message),
-                                //         );
-                                //       });
-                                // }
+                                if (message ==
+                                        TvSeriesDetailNotifier
+                                            .watchlistAddSuccessMessage ||
+                                    message ==
+                                        TvSeriesDetailNotifier
+                                            .watchlistRemoveSuccessMessage) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(content: Text(message)));
+                                } else {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          content: Text(message),
+                                        );
+                                      });
+                                }
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  // isAddedWatchlist
-                                  //     ? Icon(Icons.check)
-                                  //     : Icon(Icons.add),
+                                  isAddedWatchlist
+                                      ? Icon(Icons.check)
+                                      : Icon(Icons.add),
                                   Text('Watchlist'),
                                 ],
                               ),

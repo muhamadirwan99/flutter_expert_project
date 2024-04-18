@@ -81,7 +81,11 @@ class SearchPage extends StatelessWidget {
                                 );
                               } else {
                                 return Expanded(
-                                  child: Container(),
+                                  child: Container(
+                                    child: Text(
+                                      "Search in the search bar above",
+                                    ),
+                                  ),
                                 );
                               }
                             },
@@ -134,7 +138,11 @@ class SearchPage extends StatelessWidget {
                                 );
                               } else {
                                 return Expanded(
-                                  child: Container(),
+                                  child: Container(
+                                    child: Text(
+                                      "Search in the search bar above",
+                                    ),
+                                  ),
                                 );
                               }
                             },

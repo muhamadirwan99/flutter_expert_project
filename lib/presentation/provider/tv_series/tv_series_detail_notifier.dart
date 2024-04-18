@@ -3,6 +3,9 @@ import 'package:ditonton/domain/entities/tv_series/tv_series_detail.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/usecases/tv_series/get_tv_series_detail.dart';
 import 'package:ditonton/domain/usecases/tv_series/get_tv_series_recommendations.dart';
+import 'package:ditonton/domain/usecases/tv_series/watchlist/get_watchlist_status_tv_series.dart';
+import 'package:ditonton/domain/usecases/tv_series/watchlist/remove_watchlist_tv_series.dart';
+import 'package:ditonton/domain/usecases/tv_series/watchlist/save_watchlist_tv_series.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -12,16 +15,16 @@ class TvSeriesDetailNotifier extends ChangeNotifier {
 
   final GetTvSeriesDetail getTvSeriesDetail;
   final GetTvSeriesRecommendations getTvSeriesRecommendations;
-  // final GetWatchListStatus getWatchListStatus;
-  // final SaveWatchlist saveWatchlist;
-  // final RemoveWatchlist removeWatchlist;
+  final GetWatchListStatusTvSeries getWatchListStatus;
+  final SaveWatchlistTvSeries saveWatchlist;
+  final RemoveWatchlistTvSeries removeWatchlist;
 
   TvSeriesDetailNotifier({
     required this.getTvSeriesDetail,
     required this.getTvSeriesRecommendations,
-    // required this.getWatchListStatus,
-    // required this.saveWatchlist,
-    // required this.removeWatchlist,
+    required this.getWatchListStatus,
+    required this.saveWatchlist,
+    required this.removeWatchlist,
   });
 
   late TvSeriesDetail _tvSeries;
@@ -39,8 +42,8 @@ class TvSeriesDetailNotifier extends ChangeNotifier {
   String _message = '';
   String get message => _message;
 
-  // bool _isAddedtoWatchlist = false;
-  // bool get isAddedToWatchlist => _isAddedtoWatchlist;
+  bool _isAddedtoWatchlist = false;
+  bool get isAddedToWatchlist => _isAddedtoWatchlist;
 
   Future<void> fetchTvSeriesDetail(int id) async {
     _tvSeriesState = RequestState.Loading;
@@ -73,42 +76,42 @@ class TvSeriesDetailNotifier extends ChangeNotifier {
     );
   }
 
-  // String _watchlistMessage = '';
-  // String get watchlistMessage => _watchlistMessage;
+  String _watchlistMessage = '';
+  String get watchlistMessage => _watchlistMessage;
 
-  // Future<void> addWatchlist(MovieDetail movie) async {
-  //   final result = await saveWatchlist.execute(movie);
+  Future<void> addWatchlist(TvSeriesDetail tvSeries) async {
+    final result = await saveWatchlist.execute(tvSeries);
 
-  //   await result.fold(
-  //     (failure) async {
-  //       _watchlistMessage = failure.message;
-  //     },
-  //     (successMessage) async {
-  //       _watchlistMessage = successMessage;
-  //     },
-  //   );
+    await result.fold(
+      (failure) async {
+        _watchlistMessage = failure.message;
+      },
+      (successMessage) async {
+        _watchlistMessage = successMessage;
+      },
+    );
 
-  //   await loadWatchlistStatus(movie.id);
-  // }
+    await loadWatchlistStatus(tvSeries.id);
+  }
 
-  // Future<void> removeFromWatchlist(MovieDetail movie) async {
-  //   final result = await removeWatchlist.execute(movie);
+  Future<void> removeFromWatchlist(TvSeriesDetail tvSeries) async {
+    final result = await removeWatchlist.execute(tvSeries);
 
-  //   await result.fold(
-  //     (failure) async {
-  //       _watchlistMessage = failure.message;
-  //     },
-  //     (successMessage) async {
-  //       _watchlistMessage = successMessage;
-  //     },
-  //   );
+    await result.fold(
+      (failure) async {
+        _watchlistMessage = failure.message;
+      },
+      (successMessage) async {
+        _watchlistMessage = successMessage;
+      },
+    );
 
-  //   await loadWatchlistStatus(movie.id);
-  // }
+    await loadWatchlistStatus(tvSeries.id);
+  }
 
-  // Future<void> loadWatchlistStatus(int id) async {
-  //   final result = await getWatchListStatus.execute(id);
-  //   _isAddedtoWatchlist = result;
-  //   notifyListeners();
-  // }
+  Future<void> loadWatchlistStatus(int id) async {
+    final result = await getWatchListStatus.execute(id);
+    _isAddedtoWatchlist = result;
+    notifyListeners();
+  }
 }
