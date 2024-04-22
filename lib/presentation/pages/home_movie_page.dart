@@ -36,7 +36,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         () => Provider.of<TvSeriesListNotifier>(context, listen: false)
           ..fetchNowPlayingTvSeries()
           ..fetchPopularTvSeries()
-          ..fetchTopRatedMovies());
+          ..fetchTopRatedTvSeries());
   }
 
   @override

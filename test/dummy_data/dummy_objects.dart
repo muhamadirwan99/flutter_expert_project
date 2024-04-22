@@ -1,7 +1,10 @@
 import 'package:ditonton/data/models/movie_table.dart';
+import 'package:ditonton/data/models/tv_series/tv_series_table.dart';
 import 'package:ditonton/domain/entities/genre.dart';
 import 'package:ditonton/domain/entities/movie.dart';
 import 'package:ditonton/domain/entities/movie_detail.dart';
+import 'package:ditonton/domain/entities/tv_series/tv_series.dart';
+import 'package:ditonton/domain/entities/tv_series/tv_series_detail.dart';
 
 final testMovie = Movie(
   adult: false,
@@ -56,4 +59,65 @@ final testMovieMap = {
   'overview': 'overview',
   'posterPath': 'posterPath',
   'title': 'title',
+};
+
+final testTvSeries = TvSeries(
+  adult: false,
+  backdropPath: "/fFWdqlnBVNMLDneYUeQLFuPBq4Z.jpg",
+  genreIds: [16, 10759],
+  id: 888,
+  originCountry: ["US"],
+  originalLanguage: "en",
+  originalName: "Spider-Man",
+  overview:
+      "Bitten by a radioactive spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+  popularity: 197.224,
+  posterPath: "/m78QRL6puLJ9pXSQ8XMd3dVKOOW.jpg",
+  firstAirDate: "1994-11-19",
+  name: "Spider-Man",
+  voteAverage: 8.267,
+  voteCount: 970,
+);
+
+final testTvSeriesList = [testTvSeries];
+
+final testTvSeriesDetail = TvSeriesDetail(
+  adult: false,
+  backdropPath: "/fFWdqlnBVNMLDneYUeQLFuPBq4Z.jpg",
+  genres: [
+    Genre(id: 16, name: 'Animation'),
+    Genre(id: 10759, name: 'Action & Adventure')
+  ],
+  id: 888,
+  originalTitle: 'Spider-Man',
+  overview:
+      'Bitten by a radioactive spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.',
+  posterPath: '/m78QRL6puLJ9pXSQ8XMd3dVKOOW.jpg',
+  releaseDate: '1994-11-19',
+  voteAverage: 8.267,
+  voteCount: 970,
+);
+
+final testWatchlistTvSeries = TvSeries.watchlist(
+  id: 888,
+  originalName: 'Spider-Man',
+  posterPath: '/m78QRL6puLJ9pXSQ8XMd3dVKOOW.jpg',
+  overview:
+      'Bitten by a radioactive spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.',
+);
+
+final testTvSeriesTable = TvSeriesTable(
+  id: 888,
+  title: 'Spider-Man',
+  posterPath: '/m78QRL6puLJ9pXSQ8XMd3dVKOOW.jpg',
+  overview:
+      'Bitten by a radioactive spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.',
+);
+
+final testTvSeriesMap = {
+  "id": 888,
+  "title": 'Spider-Man',
+  "posterPath": '/m78QRL6puLJ9pXSQ8XMd3dVKOOW.jpg',
+  "overview":
+      'Bitten by a radioactive spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.',
 };

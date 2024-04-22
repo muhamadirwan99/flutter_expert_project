@@ -1,0 +1,154 @@
+{
+  "adult": false,
+  "backdrop_path": "/fFWdqlnBVNMLDneYUeQLFuPBq4Z.jpg",
+  "created_by": [
+    {
+      "id": 1220904,
+      "credit_id": "6500a7533ff2df00c6320a1e",
+      "name": "John Semper Jr.",
+      "original_name": "John Semper Jr.",
+      "gender": 2,
+      "profile_path": null
+    }
+  ],
+  "episode_run_time": [22],
+  "first_air_date": "1994-11-19",
+  "genres": [
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+    {
+      "id": 10759,
+      "name": "Action & Adventure"
+    }
+  ],
+  "homepage": "",
+  "id": 888,
+  "in_production": false,
+  "languages": ["en"],
+  "last_air_date": "1998-01-31",
+  "last_episode_to_air": {
+    "id": 48849,
+    "overview": "Spider-Man is sent through several dimensions trying to fix time and seal away Spider-Carnage. Peter meets his would be girlfriend Gwen Stacey and Stan Lee.",
+    "name": "Spider Wars (2): Farewell, Spider-Man",
+    "vote_average": 7.8,
+    "vote_count": 8,
+    "air_date": "1998-01-31",
+    "episode_number": 13,
+    "episode_type": "finale",
+    "production_code": "",
+    "runtime": 22,
+    "season_number": 5,
+    "show_id": 888,
+    "still_path": "/mSvy3PBKsjxYvik41UI1m6DtKXT.jpg"
+  },
+  "name": "Spider-Man",
+  "next_episode_to_air": null,
+  "networks": [
+    {
+      "id": 2686,
+      "logo_path": "/rUb71E91POVCxpXGJ49pf6m8Ukk.png",
+      "name": "Fox Kids",
+      "origin_country": "US"
+    },
+    {
+      "id": 19,
+      "logo_path": "/1DSpHrWyOORkL9N2QHX7Adt31mQ.png",
+      "name": "FOX",
+      "origin_country": "US"
+    }
+  ],
+  "number_of_episodes": 65,
+  "number_of_seasons": 5,
+  "origin_country": ["US"],
+  "original_language": "en",
+  "original_name": "Spider-Man",
+  "overview": "Bitten by a radioactive spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+  "popularity": 197.224,
+  "poster_path": "/m78QRL6puLJ9pXSQ8XMd3dVKOOW.jpg",
+  "production_companies": [
+    {
+      "id": 160251,
+      "logo_path": "/x25ZchdyICzx2v0h4OQQ4yadJ0J.png",
+      "name": "Marvel Entertainment Group",
+      "origin_country": "US"
+    },
+    {
+      "id": 108634,
+      "logo_path": "/rZGM78DBr6Zn1tV9NAOhuMdB0Sn.png",
+      "name": "Marvel Films",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "seasons": [
+    {
+      "air_date": "1994-11-19",
+      "episode_count": 13,
+      "id": 2572,
+      "name": "Season 1",
+      "overview": "",
+      "poster_path": "/5311wSCVVXZgoCCbjszm4tt6vDz.jpg",
+      "season_number": 1,
+      "vote_average": 7.0
+    },
+    {
+      "air_date": "1995-09-09",
+      "episode_count": 14,
+      "id": 2570,
+      "name": "Season 2",
+      "overview": "",
+      "poster_path": "/kLH7jvpZX5om5kRf0PnkknqdRnn.jpg",
+      "season_number": 2,
+      "vote_average": 6.8
+    },
+    {
+      "air_date": "1996-04-27",
+      "episode_count": 14,
+      "id": 2568,
+      "name": "Season 3",
+      "overview": "",
+      "poster_path": "/1vqVLjM1m7jJ3xH7WcjNLgt50mP.jpg",
+      "season_number": 3,
+      "vote_average": 7.2
+    },
+    {
+      "air_date": "1997-02-01",
+      "episode_count": 11,
+      "id": 2569,
+      "name": "Season 4",
+      "overview": "",
+      "poster_path": "/7WFnsoEj89jS2m67r04hvSy0PrY.jpg",
+      "season_number": 4,
+      "vote_average": 6.6
+    },
+    {
+      "air_date": "1997-09-12",
+      "episode_count": 13,
+      "id": 2573,
+      "name": "Season 5",
+      "overview": "",
+      "poster_path": "/8GY0gSOOoSrTB3tRyrpJ2Yi4Cny.jpg",
+      "season_number": 5,
+      "vote_average": 7.1
+    }
+  ],
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Canceled",
+  "tagline": "With great power comes great responsibility",
+  "type": "Scripted",
+  "vote_average": 8.267,
+  "vote_count": 970
+}
