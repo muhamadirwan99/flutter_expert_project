@@ -15,7 +15,6 @@ dependencies:
   dartz: ^0.10.0
   flutter_bloc: ^8.0.0
   rxdart: ^0.27.1
-
   provider: any
 dev_dependencies:
   flutter_test:
