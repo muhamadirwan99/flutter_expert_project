@@ -21,7 +21,6 @@ import 'package:core/domain/usecases/tv_series/get_popular_tv_series.dart';
 import 'package:core/domain/usecases/tv_series/get_top_rated_tv_series.dart';
 import 'package:core/domain/usecases/tv_series/get_tv_series_detail.dart';
 import 'package:core/domain/usecases/tv_series/get_tv_series_recommendations.dart';
-import 'package:core/domain/usecases/tv_series/search_tv_series.dart';
 import 'package:core/domain/usecases/tv_series/watchlist/get_watchlist_status_tv_series.dart';
 import 'package:core/domain/usecases/tv_series/watchlist/get_watchlist_tv_series.dart';
 import 'package:core/domain/usecases/tv_series/watchlist/remove_watchlist_tv_series.dart';
@@ -35,12 +34,11 @@ import 'package:core/presentation/provider/tv_series/popular_tv_series_notifier.
 import 'package:core/presentation/provider/tv_series/top_rated_tv_series_notifier.dart';
 import 'package:core/presentation/provider/tv_series/tv_series_detail_notifier.dart';
 import 'package:core/presentation/provider/tv_series/tv_series_list_notifier.dart';
-import 'package:core/presentation/provider/tv_series/tv_series_search_notifier.dart';
 import 'package:core/presentation/provider/tv_series/watchlist_tv_series_notifier.dart';
 import 'package:core/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
-import 'package:search/presentation/bloc/search_bloc.dart';
+import 'package:search/domain/usecases/search_tv_series.dart';
 import 'package:search/search.dart';
 
 final locator = GetIt.instance;
@@ -67,11 +65,6 @@ void init() {
       getWatchListStatus: locator(),
       saveWatchlist: locator(),
       removeWatchlist: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => MovieSearchNotifier(
-      searchMovies: locator(),
     ),
   );
   locator.registerFactory(
@@ -105,11 +98,6 @@ void init() {
       getWatchListStatus: locator(),
       saveWatchlist: locator(),
       removeWatchlist: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TvSeriesSearchNotifier(
-      searchTvSeries: locator(),
     ),
   );
   locator.registerFactory(

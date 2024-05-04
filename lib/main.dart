@@ -18,7 +18,6 @@ import 'package:core/presentation/provider/tv_series/popular_tv_series_notifier.
 import 'package:core/presentation/provider/tv_series/top_rated_tv_series_notifier.dart';
 import 'package:core/presentation/provider/tv_series/tv_series_detail_notifier.dart';
 import 'package:core/presentation/provider/tv_series/tv_series_list_notifier.dart';
-import 'package:core/presentation/provider/tv_series/tv_series_search_notifier.dart';
 import 'package:core/presentation/provider/tv_series/watchlist_tv_series_notifier.dart';
 import 'package:core/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:core/utils/utils.dart';
@@ -29,7 +28,6 @@ import 'package:flutter/material.dart';
 import 'package:ditonton/injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:search/presentation/bloc/search_bloc.dart';
 import 'package:search/search.dart';
 
 void main() async {
@@ -56,9 +54,6 @@ class MyApp extends StatelessWidget {
           create: (_) => di.locator<MovieDetailNotifier>(),
         ),
         ChangeNotifierProvider(
-          create: (_) => di.locator<MovieSearchNotifier>(),
-        ),
-        ChangeNotifierProvider(
           create: (_) => di.locator<TopRatedMoviesNotifier>(),
         ),
         ChangeNotifierProvider(
@@ -83,13 +78,13 @@ class MyApp extends StatelessWidget {
           create: (_) => di.locator<TvSeriesDetailNotifier>(),
         ),
         ChangeNotifierProvider(
-          create: (_) => di.locator<TvSeriesSearchNotifier>(),
-        ),
-        ChangeNotifierProvider(
           create: (_) => di.locator<WatchlistTvSeriesNotifier>(),
         ),
         BlocProvider(
           create: (_) => di.locator<SearchBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<TvSeriesSearchBloc>(),
         ),
       ],
       child: MaterialApp(
