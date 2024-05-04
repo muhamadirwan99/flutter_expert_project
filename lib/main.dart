@@ -31,8 +31,8 @@ import 'package:provider/provider.dart';
 import 'package:search/search.dart';
 
 void main() async {
-  di.init();
   WidgetsFlutterBinding.ensureInitialized();
+  di.init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

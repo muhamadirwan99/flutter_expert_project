@@ -37,7 +37,9 @@ dependencies:
   search:
     path: search
   http: any
-  firebase_core: ^2.30.1
+  firebase_core: ^2.27.0
+  firebase_analytics: ^10.8.9
+  firebase_crashlytics: ^3.4.18
 dev_dependencies:
   flutter_test:
     sdk: flutter

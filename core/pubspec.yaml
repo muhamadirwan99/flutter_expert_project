@@ -23,10 +23,13 @@ dependencies:
   path_provider: ^2.0.2
   flutter_lints: ^3.0.2
   encrypt: ^5.0.1
+  flutter_bloc: ^8.0.0
+  rxdart: ^0.27.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
   mockito: ^5.0.8
+  bloc_test: ^9.0.0
   build_runner: ^2.0.4
 
 # For information on the generic Dart part of this file, see the

@@ -7,6 +7,24 @@
         tools:node="replace"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher">
+        <service
+          android:name="com.google.firebase.components.ComponentDiscoveryService"
+          android:exported="false"
+          android:directBootAware="true"
+          tools:targetApi="n">
+            <meta-data
+              android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+              android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+              android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+              android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+              android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+              android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+              android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+              android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
         <activity
             android:name=".MainActivity"
             android:exported="true"
