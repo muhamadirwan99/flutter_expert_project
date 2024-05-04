@@ -33,11 +33,12 @@ import 'package:search/presentation/bloc/search_bloc.dart';
 import 'package:search/search.dart';
 
 void main() async {
+  di.init();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  di.init();
+
   runApp(const MyApp());
 }
 

@@ -23,7 +23,6 @@ dependencies:
   path_provider: ^2.0.2
   flutter_lints: ^3.0.2
   encrypt: ^5.0.1
-  firebase_crashlytics: ^3.5.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
