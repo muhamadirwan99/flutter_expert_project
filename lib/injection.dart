@@ -11,7 +11,6 @@ import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:movie/movie.dart';
 import 'package:movie/presentation/provider/movie_detail_notifier.dart';
-import 'package:movie/presentation/provider/movie_list_notifier.dart';
 import 'package:movie/presentation/provider/popular_movies_notifier.dart';
 import 'package:movie/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:search/domain/usecases/search_tv_series.dart';
@@ -40,14 +39,22 @@ void init() {
       locator(),
     ),
   );
-  // provider
   locator.registerFactory(
-    () => MovieListNotifier(
-      getNowPlayingMovies: locator(),
-      getPopularMovies: locator(),
-      getTopRatedMovies: locator(),
+    () => NowPlayingMovieBloc(
+      locator(),
     ),
   );
+  locator.registerFactory(
+    () => PopularMovieBloc(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TopRatedMovieBloc(
+      locator(),
+    ),
+  );
+  // provider
   locator.registerFactory(
     () => MovieDetailNotifier(
       getMovieDetail: locator(),
