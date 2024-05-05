@@ -1,8 +1,5 @@
 import 'package:about/about.dart';
 import 'package:core/core.dart';
-import 'package:core/presentation/pages/watchlist_page.dart';
-import 'package:core/presentation/provider/tv_series/watchlist_tv_series_notifier.dart';
-import 'package:core/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:core/utils/utils.dart';
 import 'package:ditonton/firebase_options.dart';
 import 'package:ditonton/presentation/pages/home_movie_page.dart';
@@ -28,6 +25,9 @@ import 'package:tv_series/presentation/provider/popular_tv_series_notifier.dart'
 import 'package:tv_series/presentation/provider/top_rated_tv_series_notifier.dart';
 import 'package:tv_series/presentation/provider/tv_series_detail_notifier.dart';
 import 'package:tv_series/presentation/provider/tv_series_list_notifier.dart';
+import 'package:watchlist/presentation/pages/watchlist_page.dart';
+import 'package:watchlist/presentation/provider/watchlist_movie_notifier.dart';
+import 'package:watchlist/presentation/provider/watchlist_tv_series_notifier.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

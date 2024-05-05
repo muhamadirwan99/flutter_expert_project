@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import 'package:tv_series/presentation/pages/top_rated_tv_series_page.dart';
 import 'package:tv_series/presentation/provider/top_rated_tv_series_notifier.dart';
 
-import '../../../../core/test/presentation/pages/tv_series/top_rated_tv_series_page_test.mocks.dart';
+import 'top_rated_tv_series_page_test.mocks.dart';
 
 @GenerateMocks([TopRatedTvSeriesNotifier])
 void main() {

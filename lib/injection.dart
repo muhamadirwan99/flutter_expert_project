@@ -7,10 +7,6 @@ import 'package:core/data/repositories/movie_repository_impl.dart';
 import 'package:core/data/repositories/tv_series_repository_impl.dart';
 import 'package:core/domain/repositories/movie_repository.dart';
 import 'package:core/domain/repositories/tv_series_repository.dart';
-import 'package:core/domain/usecases/get_watchlist_movies.dart';
-import 'package:core/domain/usecases/get_watchlist_tv_series.dart';
-import 'package:core/presentation/provider/tv_series/watchlist_tv_series_notifier.dart';
-import 'package:core/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:movie/movie.dart';
@@ -26,6 +22,9 @@ import 'package:tv_series/presentation/provider/top_rated_tv_series_notifier.dar
 import 'package:tv_series/presentation/provider/tv_series_detail_notifier.dart';
 import 'package:tv_series/presentation/provider/tv_series_list_notifier.dart';
 import 'package:tv_series/tv_series.dart';
+import 'package:watchlist/presentation/provider/watchlist_movie_notifier.dart';
+import 'package:watchlist/presentation/provider/watchlist_tv_series_notifier.dart';
+import 'package:watchlist/watchlist.dart';
 
 final locator = GetIt.instance;
 

@@ -45,6 +45,8 @@ dependencies:
     path: packages/movie
   tv_series:
     path: packages/tv_series
+  watchlist:
+    path: packages/watchlist
 dev_dependencies:
   flutter_test:
     sdk: flutter

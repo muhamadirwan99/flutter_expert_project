@@ -1,7 +1,4 @@
 library watchlist;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'domain/usecases/get_watchlist_movies.dart';
+export 'domain/usecases/get_watchlist_tv_series.dart';

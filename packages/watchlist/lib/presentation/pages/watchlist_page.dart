@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
-import 'package:core/presentation/provider/tv_series/watchlist_tv_series_notifier.dart';
-import 'package:core/presentation/provider/watchlist_movie_notifier.dart';
+import '../provider/watchlist_tv_series_notifier.dart';
+import '../provider/watchlist_movie_notifier.dart';
 import 'package:core/presentation/widgets/movie_card_list.dart';
 import 'package:core/presentation/widgets/tv_series_card_list.dart';
 import 'package:core/utils/utils.dart';

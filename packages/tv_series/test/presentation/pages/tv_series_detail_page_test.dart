@@ -8,7 +8,7 @@ import 'package:tv_series/presentation/pages/tv_series_detail_page.dart';
 import 'package:tv_series/presentation/provider/tv_series_detail_notifier.dart';
 
 import '../../../../core/test/dummy_data/dummy_objects.dart';
-import '../../../../core/test/presentation/pages/tv_series/tv_series_detail_page_test.mocks.dart';
+import 'tv_series_detail_page_test.mocks.dart';
 
 @GenerateMocks([TvSeriesDetailNotifier])
 void main() {
