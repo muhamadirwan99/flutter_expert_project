@@ -30,16 +30,19 @@ dependencies:
   get_it: ^7.1.3
   provider: ^6.0.3
   flutter_bloc: ^8.0.0
-  about:
-    path: about
-  core:
-    path: core
-  search:
-    path: search
-  http: any
+  cached_network_image: ^3.0.0
   firebase_core: ^2.27.0
   firebase_analytics: ^10.8.9
   firebase_crashlytics: ^3.4.18
+  http: any
+  about:
+    path: packages/about
+  core:
+    path: packages/core
+  search:
+    path: packages/search
+  movie:
+    path: packages/movie
 dev_dependencies:
   flutter_test:
     sdk: flutter
