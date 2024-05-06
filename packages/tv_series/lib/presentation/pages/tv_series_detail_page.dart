@@ -118,32 +118,6 @@ class DetailContent extends StatelessWidget {
                                       .read<TvSeriesDetailBloc>()
                                       .add(DeleteTvSeriesWatchlist(tvSeries));
                                 }
-
-                                final bloc = context.read<TvSeriesDetailBloc>();
-                                const watchlistAddSuccessMessage =
-                                    'Added to Watchlist';
-                                const watchlistRemoveSuccessMessage =
-                                    'Removed from Watchlist';
-                                bloc.stream.listen((state) {
-                                  final message = state.message;
-                                  if (message != null) {
-                                    if (message == watchlistAddSuccessMessage ||
-                                        message ==
-                                            watchlistRemoveSuccessMessage) {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                              SnackBar(content: Text(message)));
-                                    } else {
-                                      showDialog(
-                                          context: context,
-                                          builder: (context) {
-                                            return AlertDialog(
-                                              content: Text(message),
-                                            );
-                                          });
-                                    }
-                                  }
-                                });
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,

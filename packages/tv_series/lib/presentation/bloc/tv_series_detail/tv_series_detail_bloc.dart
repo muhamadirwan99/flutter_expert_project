@@ -60,11 +60,9 @@ class TvSeriesDetailBloc
       saveWatchList.fold(
         (fail) => emit(state.copyWith(
           isWatchlist: false,
-          message: fail.message,
         )),
         (message) => emit(state.copyWith(
           isWatchlist: status,
-          message: message,
         )),
       );
     });
@@ -76,11 +74,9 @@ class TvSeriesDetailBloc
       removeWatchlist.fold(
         (fail) => emit(state.copyWith(
           isWatchlist: true,
-          message: fail.message,
         )),
         (message) => emit(state.copyWith(
           isWatchlist: status,
-          message: message,
         )),
       );
     });

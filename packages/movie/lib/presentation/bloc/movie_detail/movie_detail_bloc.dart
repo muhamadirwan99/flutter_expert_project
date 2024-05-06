@@ -58,11 +58,9 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
       saveWatchList.fold(
         (fail) => emit(state.copyWith(
           isWatchlist: false,
-          message: fail.message,
         )),
         (message) => emit(state.copyWith(
           isWatchlist: status,
-          message: message,
         )),
       );
     });
@@ -73,11 +71,9 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
       removeWatchlist.fold(
         (fail) => emit(state.copyWith(
           isWatchlist: true,
-          message: fail.message,
         )),
         (message) => emit(state.copyWith(
           isWatchlist: status,
-          message: message,
         )),
       );
     });
