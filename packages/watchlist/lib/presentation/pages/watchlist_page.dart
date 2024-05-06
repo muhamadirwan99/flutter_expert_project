@@ -1,4 +1,3 @@
-import 'package:core/core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watchlist/watchlist.dart';
 import 'package:core/presentation/widgets/movie_card_list.dart';

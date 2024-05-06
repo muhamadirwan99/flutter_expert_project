@@ -7,8 +7,8 @@ import 'package:core/data/repositories/movie_repository_impl.dart';
 import 'package:core/data/repositories/tv_series_repository_impl.dart';
 import 'package:core/domain/repositories/movie_repository.dart';
 import 'package:core/domain/repositories/tv_series_repository.dart';
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart';
 import 'package:movie/movie.dart';
 import 'package:search/domain/usecases/search_tv_series.dart';
 import 'package:search/search.dart';
@@ -17,7 +17,7 @@ import 'package:watchlist/watchlist.dart';
 
 final locator = GetIt.instance;
 
-void init() {
+void init(Client client) {
   // bloc
   locator.registerFactory(
     () => SearchBloc(
@@ -140,5 +140,5 @@ void init() {
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
 
   // external
-  locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => client);
 }

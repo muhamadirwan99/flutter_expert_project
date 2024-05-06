@@ -8,6 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ditonton/injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart';
 import 'package:movie/movie.dart';
 import 'package:movie/presentation/pages/movie_detail_page.dart';
 import 'package:movie/presentation/pages/popular_movies_page.dart';
@@ -21,9 +22,12 @@ import 'package:tv_series/tv_series.dart';
 import 'package:watchlist/presentation/pages/watchlist_page.dart';
 import 'package:watchlist/watchlist.dart';
 
+import 'ssl_pinning.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  di.init();
+  Client client = await getSSLPinningClient();
+  di.init(client);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
