@@ -5,6 +5,7 @@
    <application
         android:label="ditonton"
         tools:node="replace"
+        android:enableOnBackInvokedCallback="true"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher">
         <service

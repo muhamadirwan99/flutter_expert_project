@@ -12,10 +12,7 @@ import 'package:get_it/get_it.dart';
 import 'package:movie/movie.dart';
 import 'package:search/domain/usecases/search_tv_series.dart';
 import 'package:search/search.dart';
-import 'package:tv_series/presentation/provider/tv_series_detail_notifier.dart';
 import 'package:tv_series/tv_series.dart';
-import 'package:watchlist/presentation/provider/watchlist_movie_notifier.dart';
-import 'package:watchlist/presentation/provider/watchlist_tv_series_notifier.dart';
 import 'package:watchlist/watchlist.dart';
 
 final locator = GetIt.instance;
@@ -80,17 +77,14 @@ void init() {
       locator(),
     ),
   );
-  // provider
   locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
+    () => WatchlistMovieBloc(
+      locator(),
     ),
   );
-
-  // provider tv series
   locator.registerFactory(
-    () => WatchlistTvSeriesNotifier(
-      getWatchlistTvSeries: locator(),
+    () => WatchlistTvSeriesBloc(
+      locator(),
     ),
   );
 
