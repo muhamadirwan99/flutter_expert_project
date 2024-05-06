@@ -10,9 +10,6 @@ import 'package:core/domain/repositories/tv_series_repository.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:movie/movie.dart';
-import 'package:movie/presentation/provider/movie_detail_notifier.dart';
-import 'package:movie/presentation/provider/popular_movies_notifier.dart';
-import 'package:movie/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:search/domain/usecases/search_tv_series.dart';
 import 'package:search/search.dart';
 import 'package:tv_series/presentation/provider/now_playing_tv_series_notifier.dart';
@@ -54,26 +51,16 @@ void init() {
       locator(),
     ),
   );
-  // provider
   locator.registerFactory(
-    () => MovieDetailNotifier(
-      getMovieDetail: locator(),
-      getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => PopularMoviesNotifier(
+    () => MovieDetailBloc(
+      locator(),
+      locator(),
+      locator(),
+      locator(),
       locator(),
     ),
   );
-  locator.registerFactory(
-    () => TopRatedMoviesNotifier(
-      getTopRatedMovies: locator(),
-    ),
-  );
+  // provider
   locator.registerFactory(
     () => WatchlistMovieNotifier(
       getWatchlistMovies: locator(),
