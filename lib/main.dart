@@ -17,11 +17,7 @@ import 'package:tv_series/presentation/pages/now_playing_tv_series_page.dart';
 import 'package:tv_series/presentation/pages/popular_tv_series_page.dart';
 import 'package:tv_series/presentation/pages/top_rated_tv_series_page.dart';
 import 'package:tv_series/presentation/pages/tv_series_detail_page.dart';
-import 'package:tv_series/presentation/provider/now_playing_tv_series_notifier.dart';
-import 'package:tv_series/presentation/provider/popular_tv_series_notifier.dart';
-import 'package:tv_series/presentation/provider/top_rated_tv_series_notifier.dart';
-import 'package:tv_series/presentation/provider/tv_series_detail_notifier.dart';
-import 'package:tv_series/presentation/provider/tv_series_list_notifier.dart';
+import 'package:tv_series/tv_series.dart';
 import 'package:watchlist/presentation/pages/watchlist_page.dart';
 import 'package:watchlist/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:watchlist/presentation/provider/watchlist_tv_series_notifier.dart';
@@ -47,21 +43,6 @@ class MyApp extends StatelessWidget {
           create: (_) => di.locator<WatchlistMovieNotifier>(),
         ),
         ChangeNotifierProvider(
-          create: (_) => di.locator<TvSeriesListNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularTvSeriesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedTvSeriesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<NowPlayingTvSeriesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TvSeriesDetailNotifier>(),
-        ),
-        ChangeNotifierProvider(
           create: (_) => di.locator<WatchlistTvSeriesNotifier>(),
         ),
         BlocProvider(
@@ -81,6 +62,21 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => di.locator<MovieDetailBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<NowPlayingTvSeriesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<NowPlayingTvSeriesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<TopRatedTvSeriesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<PopularTvSeriesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<TvSeriesDetailBloc>(),
         ),
       ],
       child: MaterialApp(
